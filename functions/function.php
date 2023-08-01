@@ -8,4 +8,11 @@ function safety($data) {
     return $data;
 }
 
+function getAbout($db) {
+    $query = $db->prepare("SELECT * FROM about", PDO::FETCH_ASSOC);
+    if ($query != false && !empty($query)) {
+        return $query;
+    }
+}
+
 ?>
