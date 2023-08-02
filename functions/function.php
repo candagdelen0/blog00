@@ -22,5 +22,13 @@ function getCities($db) {
     }
 }
 
+function getSpecialCities($db)
+{
+    $query = $db->query("SELECT * FROM sehirler", PDO::FETCH_ASSOC)->fetchAll();
+    if ($query != false && !empty($query)) {
+        return $query;
+    }
+}
+
 
 ?>
