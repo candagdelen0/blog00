@@ -30,5 +30,13 @@ function getSpecialCities($db)
     }
 }
 
+function getAdvise($db)
+{
+    $query = $db->query("SELECT * FROM oneri", PDO::FETCH_ASSOC)->fetchAll();
+    if ($query != false && !empty($query)) {
+        return $query;
+    }
+}
+
 
 ?>
