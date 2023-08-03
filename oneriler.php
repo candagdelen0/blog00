@@ -1,4 +1,6 @@
 <?php
+session_start();
+ob_start();
 require "functions/connection.php";
 require "functions/function.php";
 include ("partial/_header.php");
