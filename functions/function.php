@@ -7,6 +7,13 @@
             return $stmt->fetchAll();
         }
 
+        public function getAbout() {
+            $sql = "SELECT * FROM about";
+            $stmt = $this->connect()->prepare($sql);
+            $stmt->execute();
+            return $stmt->fetchAll();
+        }
+    }
 
 
 
