@@ -13,6 +13,14 @@
             return $stmt->fetchAll();
         }
 
+        public function getAdvise() {
+            $sql = "SELECT * FROM oneri";
+            $stmt = $this->connect()->prepare($sql);
+            $stmt->execute();
+            return $stmt->fetchAll();
+        }
+
+
 
     }
 ?>
