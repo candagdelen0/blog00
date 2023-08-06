@@ -1,43 +1,13 @@
-<?php
-require "functions/connection.php";
+<?php 
+    class Blog extends Db {
+        public function getCities() {
+            $sql = "SELECT * FROM sehirler LIMIT 3";
+            $stmt = $this->connect()->prepare($sql);
+            $stmt->execute();
+            return $stmt->fetchAll();
+        }
 
-function safety($data) {
-    $data = trim($data);
-    $data = stripcslashes($data);
-    $data = htmlspecialchars($data);
-    return $data;
-}
 
-function getAbout($db) {
-    $query = $db->query("SELECT * FROM about", PDO::FETCH_ASSOC)->fetch();
-    if ($query != false && !empty($query)) {
-        return $query;
-    }
-}
-
-function getCities($db)
-{
-    $query = $db->query("SELECT * FROM sehirler LIMIT 3", PDO::FETCH_ASSOC)->fetchAll();
-    if ($query != false && !empty($query)) {
-        return $query;
-    }
-}
-
-function getSpecialCities($db)
-{
-    $query = $db->query("SELECT * FROM sehirler", PDO::FETCH_ASSOC)->fetchAll();
-    if ($query != false && !empty($query)) {
-        return $query;
-    }
-}
-
-function getAdvise($db)
-{
-    $query = $db->query("SELECT * FROM oneri", PDO::FETCH_ASSOC)->fetchAll();
-    if ($query != false && !empty($query)) {
-        return $query;
-    }
-}
 
 
 ?>
