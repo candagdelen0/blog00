@@ -26,6 +26,14 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
     } else {
         $repassword = $sistem->safety($_POST["repassword"]);
     }
+
+    if ($username != "" && $password != "" && $repassword != "") {
+        $sql = "INSERT INTO users SET username = ?, parola = ?";
+        $query = $sistem->SignUp($sql);
+        $query->execute([$username, $password]);
+        echo '<div class="col-md-4 mx-auto mt-2 alert alert-success">Kayıt Başarılı</div>';
+        header("refresh: 2, url=login.php");
+    } 
 }
 
 ?>

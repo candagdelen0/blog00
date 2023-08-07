@@ -32,6 +32,12 @@
             return $data;
         }
 
+        public function SignUp($sql) {
+            $query = $this->connect()->prepare($sql);
+            return $query;
+        }
+
+
 
 
     }
