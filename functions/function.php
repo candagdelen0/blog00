@@ -20,6 +20,11 @@
             return $stmt->fetchAll();
         }
 
+        public function loginControl($sql) {
+            $stmt = $this->connect()->prepare($sql);
+            return $stmt;
+        }
+
 
 
     }
