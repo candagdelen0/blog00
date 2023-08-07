@@ -4,6 +4,7 @@ require "functions/function.php";
 include ("partial/_header.php");
 include ("partial/_navbar.php");
 
+$sistem = new Blog();
 $usernameErr = $passwordErr = $repasswordErr = "";
 $username = $password = $repassword = "";
 
@@ -11,25 +12,20 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
     if(empty($_POST["username"])) {
         $usernameErr = "Kullanıcı adı boş bırakılamaz";
     } else {
-        $username = safety($_POST["username"]);
+        $username = $sistem->safety($_POST["username"]);
     }
 
     if(empty($_POST["password"])) {
         $passwordErr = "Parola boş bırakılamaz";
     } else {
-        $password = safety($_POST["password"]);
+        $password = $sistem->safety($_POST["password"]);
     }
 
     if(empty($_POST["password"])) {
         $repasswordErr = "Parola tekrarı boş bırakılamaz";
     } else {
-        $repassword = safety($_POST["repassword"]);
+        $repassword = $sistem->safety($_POST["repassword"]);
     }
-
-    $query = $db->prepare("INSERT INTO users SET username = ?, parola = ?");
-    $query->execute([$username, $password]);
-    //echo 'Kaydetme başarılı';
-    header("refresh: 2, url=login.php");
 }
 
 ?>
@@ -60,6 +56,3 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
         </div>
     </div>
 </div>
-<?php include ("partial/_footer.php"); ?>
-
-
