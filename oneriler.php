@@ -14,20 +14,23 @@
     </div>
     <div class="row"><?php
         $sistem = new Blog();
-        foreach ($sistem->getAdvise() as $oneri):
+        $sql = "SELECT * FROM oneri";
+        foreach ($sistem->getAdvise($sql) as $oneri):
             ?><div class="col-md-4 mt-2 mb-2">
-                <div class="card">
+                <div class="card text-center">
                     <div class="row">
-                        <img src="<?php echo  $oneri->gorsel; ?>">
+                        <img src="<?php echo  $oneri->gorsel; ?>" class="mx-auto mt-2" style="width: 300px; height: 200px;">
                     </div>
                     <div class="row">
-                        <h5 class="card-title text-center mt-1 mb-2"><a href="#" style="text-decoration:none;" class="text-dark"><?php echo  $oneri->baslik; ?></a></h5>
+                        <h5 class="card-title text-center mt-1 mb-2"><a href="adviser.php?id=<?php echo  $oneri->id; ?>" style="text-decoration:none;" class="text-dark"><?php echo  $oneri->baslik; ?></a></h5>
                     </div>
                     <div class="row">
-                        <p class="card-text ms-2 me-2 mb-3"><?php echo  $oneri->metin; ?></p>
+                        <p class="card-text ms-2 me-2 mb-3"><?php echo  $oneri->aciklama; ?></p>
                     </div>
                 </div>
             </div>
         <?php endforeach; ?>
     </div>
 </div>
+
+<?php include ("partial/_footer.php"); ?>
