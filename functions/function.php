@@ -13,8 +13,7 @@
             return $stmt->fetchAll();
         }
 
-        public function getAdvise() {
-            $sql = "SELECT * FROM oneri";
+        public function getAdvise($sql) {
             $stmt = $this->connect()->prepare($sql);
             $stmt->execute();
             return $stmt->fetchAll();
@@ -24,7 +23,7 @@
             $stmt = $this->connect()->prepare($sql);
             return $stmt;
         }
-
+        
         public function safety($data) {
             $data = trim($data);
             $data = stripcslashes($data);
@@ -36,9 +35,8 @@
             $query = $this->connect()->prepare($sql);
             return $query;
         }
-
-
-
-
     }
+
+
+
 ?>
