@@ -1,3 +1,17 @@
+<style>
+    #logout {
+        border-radius: 8px;
+        background-color: #0DCAF0;
+        color: black; 
+        border: 2px solid #0D6EFD; 
+    }
+    #logout:hover {
+        background-color: #0D6EFD;
+        color: white;
+    }
+
+</style>
+
 <nav class="navbar navbar-expand-lg bg-info">
     <div class="container">
         <a href="index.php" class="navbar-brand"><b>Seyahatname</b></a>
@@ -8,8 +22,8 @@
         </ul>
         <ul class="navbar-nav me-2">
             <?php if (isset($_SESSION['Kullanici'])): ?>
-                <li class="nav-item"><a href="#" class="nav-link border border-primary rounded bg-primary text-white"><?php echo $_SESSION['Kullanici']; ?></a></li>
-                <li class="nav-item"><a href="logout.php" class="nav-link">Logout</a></li>
+                <li class="nav-item"><a href="userpage.php" class="nav-link border border-primary rounded bg-primary text-white ms-2 me-2"><?php echo $_SESSION['Kullanici']; ?></a></li>
+                <li class="nav-item"><a href="logout.php" class="nav-link ms-2 me-2" id="logout">Logout</a></li>
             <?php else: ?>
                 <li class="nav-item"><a href="login.php" class="nav-link">Login</a></li>
                 <li class="nav-item"><a href="register.php" class="nav-link">Register</a></li>

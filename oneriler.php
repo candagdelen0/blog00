@@ -15,7 +15,7 @@
     <div class="row"><?php
         $sistem = new Blog();
         $sql = "SELECT * FROM oneri";
-        foreach ($sistem->getAdvise($sql) as $oneri):
+        foreach ($sistem->genelsorgu($sql) as $oneri):
             ?><div class="col-md-4 mt-2 mb-2">
                 <div class="card text-center">
                     <div class="row">

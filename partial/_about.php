@@ -3,7 +3,8 @@
     require_once "functions/function.php"; 
     
     $about = new Blog();
-    foreach ($about->getAbout() as $item):
+    $sql = "SELECT * FROM about";
+    foreach ($about->genelsorgu($sql) as $item):
         ?><div class="card mt-3">
         <div class="row text-center">
             <div class="col-md-12 mt-2"><img src="<?php echo $item->picture; ?>" class="rounded-circle" style="width: 200px; height: 250px;"></div>

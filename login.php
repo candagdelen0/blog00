@@ -15,7 +15,7 @@ if(isset($_POST["login"])):
         header("refresh: 2, url= index.php");
     else:
         $sql = "SELECT * FROM users WHERE username=? AND parola=?";
-        $query = $sistem->loginControl($sql);
+        $query = $sistem->sorgu($sql);
         $query->execute([$username,$password]);
         
         if ($query->rowCount() != 0):

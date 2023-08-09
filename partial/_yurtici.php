@@ -3,7 +3,7 @@ require "functions/function.php";
 
 $sistem = new Blog();
 $sql = "SELECT * FROM sehirler";
-foreach ($sistem->getCities($sql) as $item):
+foreach ($sistem->genelsorgu($sql) as $item):
     if ($item->ulkeAdi == "Türkiye"):
         ?><div class="card mb-3 mt-3">
             <div class="row">

@@ -4,7 +4,7 @@
 
     $sehirler = new Blog();
     $sql = "SELECT * FROM sehirler LIMIT 3";
-    foreach ($sehirler->getCities($sql) as $item):
+    foreach ($sehirler->genelsorgu($sql) as $item):
         ?><div class="card mb-3 mt-3">
             <div class="row">
                 <div class="col-md-4 text-center mt-3 pb-3"><img src="<?php echo $item->sehirResmi ?>" style="width: 200px; height: 250px;"></div>

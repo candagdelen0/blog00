@@ -9,7 +9,7 @@
     $id = $sistem->safety($_GET["id"]);
     $sql = "SELECT * FROM oneri WHERE id=$id";
 
-    foreach ($sistem->getAdvise($sql) as $item) {
+    foreach ($sistem->genelsorgu($sql) as $item) {
         echo '<div class="container">
             <div class="row">
                 <div class="col-md-10 mx-auto p-2 bg-light mt-3 mb-3">
