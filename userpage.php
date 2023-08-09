@@ -28,7 +28,7 @@
                 </div>';
             }
         ?></div>
-      <div class="col-md-8">
+        <div class="col-md-8">
             <table class="table table-bordered table-striped mt-3">
                 <thead>
                     <tr>
@@ -42,7 +42,7 @@
                     }
 
                     $sql2 = "SELECT * FROM sehirler WHERE userid = $id";
-                    
+                    $sql3 = "SELECT * FROM oneri WHERE userid = $id";
                     foreach ($sistem->genelsorgu($sql2) as $item) {
                         echo '<tr>
                             <td>'.$item->sehirAdi.'</td>
@@ -53,8 +53,16 @@
                         </tr>';
                     }
                         
-
-                    echo '</tbody>
+                    foreach ($sistem->genelsorgu($sql3) as $item2) {
+                        echo '<tr>
+                            <td>'.$item2->baslik.'</td>
+                            <td class="text-center">
+                                <a href="edit-text.php?onerid='.$item2->id.'" class="btn btn-warning me-2">Düzenle</a>
+                                <a href="delete.php?onerid='.$item2->id.'" class="btn btn-danger pe-4 ps-4">Sil</a>
+                            </td>
+                        </tr>';
+                    }
+                echo '</tbody>
             </table>
         </div>';         
 
