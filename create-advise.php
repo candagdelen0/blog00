@@ -5,6 +5,21 @@
     include "partial/_header.php";
     include "partial/_navbar.php";
 
+    $sistem = new Blog();
+    $userid = $_GET["userid"];
+
+    if(isset($_POST["submit"])) {
+        $title = $sistem->safety($_POST["title"]);
+        $description = $sistem->safety($_POST["description"]);
+        $metin = $sistem->safety($_POST["metin"]);
+        $picture = $sistem->safety($_POST["picture"]);
+
+        $sql = "INSERT INTO oneri SET userid=?, gorsel=?, baslik=?, aciklama=?, metin=?";
+        $query = $sistem->sorgu($sql);
+        $query->execute([$userid, $picture, $title, $description, $metin]);
+        echo '<div class="alert alert-success">Kayıt Başarıyla Tamamlandı</div>';
+        header('refresh:2, url=userpage.php');
+    }
 
 ?>
 
