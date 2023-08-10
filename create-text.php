@@ -5,6 +5,22 @@
     include "partial/_header.php";
     include "partial/_navbar.php";
 
+    $sistem = new Blog();
+    $userid = $_GET["userid"];
+
+    if(isset($_POST["submit"])) {
+        $country = $sistem->safety($_POST["country"]);
+        $city = $sistem->safety($_POST["city"]);
+        $description = $sistem->safety($_POST["description"]);
+        $metin = $sistem->safety($_POST["metin"]);
+        $picture = $sistem->safety($_POST["picture"]);
+
+        $sql = "INSERT INTO sehirler SET userid=?, ulkeAdi=?, sehirAdi=?, sehirResmi=?, sehirAciklama=?, metin=?";
+        $query = $sistem->sorgu($sql);
+        $query->execute([$userid, $country, $city, $picture, $description, $metin]);
+        echo '<div class="alert alert-success">Kayıt Başarıyla Tamamlandı</div>';
+        header('refresh:2, url=userpage.php');
+    }
 
 ?>
 
