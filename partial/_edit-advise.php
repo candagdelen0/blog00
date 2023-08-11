@@ -1,4 +1,15 @@
 <?php
+if (isset($_POST["submit"])) {
+    $baslik = $_POST["title"];
+    $aciklama = $_POST["description"];
+    $metin = $_POST["metin"];
+    $gorsel = $_POST["picture"];
+
+    if($sistem->editAdvise($oneriId, $gorsel, $baslik, $aciklama, $metin)) {
+        echo '<div class="alert alert-success">Bilgiler Güncellendi</div>';
+        header('refresh:2, url=userpage.php');
+    }
+} 
 
 foreach ($sistem->genelsorgu($sql2) as $item):
     ?><div class="container my-3">
