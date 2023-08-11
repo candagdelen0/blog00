@@ -21,7 +21,6 @@
         echo '<div class="alert alert-success">Kayıt Başarıyla Tamamlandı</div>';
         header('refresh:2, url=userpage.php');
     }
-
 ?>
 
 <div class="container my-3">
@@ -40,11 +39,11 @@
                     </div>
                     <div class="mb-3">
                         <label for="description">Tanıtım Yazısı</label>
-                        <textarea name="description" class="form-control"></textarea>
+                        <textarea name="description" class="form-control" required></textarea>
                     </div>
                     <div class="mb-3">
                         <label for="metin">Metin</label>
-                        <textarea name="metin" class="form-control"></textarea>
+                        <textarea name="metin" class="form-control" required></textarea>
                     </div>
                     <div class="mb-3">
                         <label for="picture">Resim Yükleme Alanı</label>
