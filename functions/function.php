@@ -18,5 +18,18 @@
             return $data;
         }
 
+        public function editText($id, $ulkeAdi, $sehirAdi, $sehirResmi, $sehirAciklama, $metin) {
+            $sql = "UPDATE sehirler SET ulkeAdi=:ulkeAdi, sehirAdi=:sehirAdi, sehirResmi=:sehirResmi, sehirAciklama=:sehirAciklama, metin=:metin WHERE id=:id";
+            $stmt = $this->connect()->prepare($sql);
+            return $stmt->execute([
+                'id' => $id,
+                'ulkeAdi' => $ulkeAdi,
+                'sehirAdi' => $sehirAdi,
+                'sehirResmi' => $sehirResmi,
+                'sehirAciklama' => $sehirAciklama,
+                'metin' => $metin,
+            ]);
+        }
+
     }
 ?>
