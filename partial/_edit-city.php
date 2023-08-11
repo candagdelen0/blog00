@@ -1,5 +1,16 @@
 <?php
- 
+ if (isset($_POST["submit"])) {
+    $ulkeAdi = $_POST["country"];
+    $sehirAdi = $_POST["city"];
+    $sehirAciklama = $_POST["description"];
+    $metin = $_POST["metin"];
+    $sehirResmi = $_POST["picture"];
+
+    if($sistem->editText($yaziId, $ulkeAdi, $sehirAdi, $sehirResmi, $sehirAciklama, $metin)) {
+        echo '<div class="alert alert-success">Bilgiler Güncellendi</div>';
+        header('refresh:2, url=userpage.php');
+    }
+} 
 
 foreach ($sistem->genelsorgu($sql) as $item):
     ?><div class="container my-3">
