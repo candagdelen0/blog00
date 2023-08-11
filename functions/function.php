@@ -43,5 +43,13 @@
             ]);
         }
 
+        public function deleteText($id, $table) {
+            $sql = "DELETE FROM $table WHERE id=:id";
+            $stmt =$this->connect()->prepare($sql);
+            return $stmt->execute([
+                'id' => $id,
+            ]);
+        }
+
     }
 ?>
