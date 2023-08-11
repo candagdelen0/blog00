@@ -31,5 +31,17 @@
             ]);
         }
 
+        public function editAdvise($id, $gorsel, $baslik, $aciklama, $metin) {
+            $sql = "UPDATE oneri SET gorsel=:gorsel, baslik=:baslik, aciklama=:aciklama, metin=:metin WHERE id=:id";
+            $stmt = $this->connect()->prepare($sql);
+            return $stmt->execute([
+                'id' => $id,
+                'gorsel' => $gorsel,
+                'baslik' => $baslik,
+                'aciklama' => $aciklama,
+                'metin' => $metin,
+            ]);
+        }
+
     }
 ?>
