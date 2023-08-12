@@ -51,5 +51,16 @@
             ]);
         }
 
+        public function updateSettings($id, $username, $parola, $resim) {
+            $sql = "UPDATE users SET username=:username, parola=:parola, resim=:resim WHERE id=:id";
+            $stmt = $this->connect()->prepare($sql);
+            return $stmt->execute([
+                'id' => $id,
+                'username' => $username,
+                'parola' => $parola,
+                'resim' => $resim,
+            ]);
+        }
+
     }
 ?>
