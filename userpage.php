@@ -100,7 +100,7 @@
                         
                     foreach ($sistem->genelsorgu($sql3) as $item2) {
                         echo '<tr>
-                            <td>'.$item2->baslik.'</td>
+                            <td><a href="adviser.php?id='.$item2->id.'" style="text-decoration: none; color: black;">'.$item2->baslik.'</a></td>
                             <td class="text-center">
                                 <a href="edit-text.php?onerid='.$item2->id.'" class="btn btn-warning me-2">Düzenle</a>
                                 <a href="delete.php?onerid='.$item2->id.'" class="btn btn-danger pe-4 ps-4">Sil</a>
