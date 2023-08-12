@@ -60,7 +60,7 @@
                     <div class="row text-center">
                         <div class="col-md-12 mt-2"><img src="'.$user->resim.'" class="rounded-circle" style="width: 200px; height: 250px;"></div>
                         <div class="col-md-12">
-                            <h5 class="card-title mt-2"><a href="#" class="text-secondary"><i class="fa-solid fa-sliders me-3"></i></a>'.$username.'</h5>
+                            <h5 class="card-title mt-2"><a href="usersettings.php?id='.$user->id.'" class="text-secondary"><i class="fa-solid fa-sliders me-3"></i></a>'.$username.'</h5>
                             <div class="card-text dropdown mt-2 mb-3">
                                 <button class="dropbtn">Yeni Yazı Ekle</button>
                                 <div class="dropdown-content">
