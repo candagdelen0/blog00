@@ -9,6 +9,19 @@
     $username = $_SESSION['Kullanici'];
     $sql = "SELECT * FROM users WHERE username = '$username'";
  
+    if (isset($_POST["submit"])):
+        $id = $_GET["id"];
+        $username = $_POST["username"];
+        $parola = $_POST["password"];
+        $resim = $_POST["picture"];
+
+        if ($sistem->updateSettings($id, $username, $parola, $resim)):
+            $_SESSION['Kullanici'] = $username;
+            echo '<div class="alert alert-success">Bilgiler Güncellendi</div>';
+            header('refresh:2, url=userpage.php');
+        endif;
+
+    endif; 
 
         foreach ($sistem->genelsorgu($sql) as $item):
             ?><div class="container my-3">
