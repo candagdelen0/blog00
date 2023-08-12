@@ -90,7 +90,7 @@
                     $sql3 = "SELECT * FROM oneri WHERE userid = $id";
                     foreach ($sistem->genelsorgu($sql2) as $item) {
                         echo '<tr>
-                            <td>'.$item->sehirAdi.'</td>
+                        <td><a href="pages.php?id='.$item->id.'" style="text-decoration: none; color: black;">'.$item->sehirAdi.'</a></td>
                             <td class="text-center">
                                 <a href="edit-text.php?yazid='.$item->id.'" class="btn btn-warning me-2">Düzenle</a>
                                 <a href="delete.php?yazid='.$item->id.'" class="btn btn-danger pe-4 ps-4">Sil</a>
