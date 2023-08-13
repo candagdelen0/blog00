@@ -8,3 +8,6 @@
 
 >> 3. *Kullanıcı Sayfası* <br>
 >>> ![Kullanıcı](pr/userpage.png) <br>
+
+>> 4. *Düzenleme Sayfası* <br>
+>>> ![Düzenleme](pr/editing.png) <br>
