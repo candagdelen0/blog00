@@ -3,8 +3,8 @@
 >> 1. *Ana sayfa görüntüsü* <br>
 >>> ![Anasayfa](resimler/pr/anasayfa.png) <br>
 >> 2. *İçerik Sayfası* <br>
->>> ![İçerik](pr/text.png) <br>
+>>> ![İçerik](resimler/pr/text.png) <br>
 >> 3. *Kullanıcı Sayfası* <br>
->>> ![Kullanıcı](pr/userpage.png) <br>
+>>> ![Kullanıcı](resimler/pr/userpage.png) <br>
 >> 4. *Düzenleme Sayfası* <br>
->>> ![Düzenleme](pr/editing.png) <br>
+>>> ![Düzenleme](resimler/pr/editing.png) <br>
