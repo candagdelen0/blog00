@@ -1,1 +1,1 @@
-# blog00
+# BASIC BLOG PROJECT
